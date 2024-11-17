@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Gold_rate_tracker/static/css/main.5ab53e44.css",
+    "main.js": "/Gold_rate_tracker/static/js/main.7de0e467.js",
+    "static/js/453.13557df5.chunk.js": "/Gold_rate_tracker/static/js/453.13557df5.chunk.js",
+    "index.html": "/Gold_rate_tracker/index.html",
+    "main.5ab53e44.css.map": "/Gold_rate_tracker/static/css/main.5ab53e44.css.map",
+    "main.7de0e467.js.map": "/Gold_rate_tracker/static/js/main.7de0e467.js.map",
+    "453.13557df5.chunk.js.map": "/Gold_rate_tracker/static/js/453.13557df5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ab53e44.css",
+    "static/js/main.7de0e467.js"
+  ]
+}
