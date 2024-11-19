@@ -9,7 +9,6 @@ const App = () => {
   const [hasSet, setHasSet] = useState(false);
   const [priceDiff,setPriceDiff] = useState(0);
 
-  // Initialize `price` state as an array of objects with date and price
   const [price, setPrice] = useState(() => {
     const storedPrices = localStorage.getItem('price');
     return storedPrices ? JSON.parse(storedPrices) : [];
