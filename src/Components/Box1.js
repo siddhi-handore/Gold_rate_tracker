@@ -13,7 +13,7 @@ const Box1 = (props) => {
     else{
       setGrowth(false);
     }
-  })
+  },[props.priceDiff]);
   
   return (
     <div className="box1">
