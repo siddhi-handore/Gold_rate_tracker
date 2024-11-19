@@ -17,7 +17,8 @@ const App = () => {
 
   useEffect(() => {
     setHasSet(false);
-    // Replace this with your actual API URL
+    const prevFetchTime = localStorage.getItem('fetchTime');
+    const currFetchtime = Date.now();
     const addNewPrice = ()=>{
     fetch('https://api.metalpriceapi.com/v1/latest?api_key=a50e72e73f8b49053f2c077e825214a8&base=INR&currencies=XAU')
       .then(response => response.json())
@@ -43,14 +44,15 @@ const App = () => {
 
           localStorage.setItem('price', JSON.stringify(updatedPrice));
           return updatedPrice;
-          console.log(price);
         });
+        localStorage.setItem('fetchTime',Date.now());
       })
       .catch(error => console.error(error));
     }
-    addNewPrice();
-    const interval = setInterval(addNewPrice,86400000);
-    return () => clearInterval(interval);
+      if(prevFetchTime - currFetchtime >= 86400000)
+      {
+        addNewPrice();
+      }
   }, []);
 
   return (
