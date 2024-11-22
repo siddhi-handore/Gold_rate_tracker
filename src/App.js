@@ -16,7 +16,7 @@ const App = () => {
 
   useEffect(() => {
     setHasSet(false);
-    const prevFetchTime = localStorage.getItem('fetchTime');
+    const prevFetchTime = parseInt(localStorage.getItem('fetchTime') || 0);
     const currFetchtime = Date.now();
     const addNewPrice = ()=>{
     fetch('https://api.metalpriceapi.com/v1/latest?api_key=a50e72e73f8b49053f2c077e825214a8&base=INR&currencies=XAU')
@@ -39,6 +39,9 @@ const App = () => {
             const lastPrice = updatedPrice[updatedPrice.length - 1].price;
             const secondLast = updatedPrice[updatedPrice.length -2].price;
             setPriceDiff(lastPrice - secondLast);
+            console.log(lastPrice);
+            console.log(secondLast);
+            console.log(priceDiff);
           }
 
           localStorage.setItem('price', JSON.stringify(updatedPrice));
@@ -48,7 +51,7 @@ const App = () => {
       })
       .catch(error => console.error(error));
     }
-      if(prevFetchTime - currFetchtime >= 86400000)
+      if(currFetchtime - prevFetchTime >= 86400000)
       {
         addNewPrice();
       }
