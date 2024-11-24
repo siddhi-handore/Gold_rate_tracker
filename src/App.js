@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Box1 from './Components/Box1.js';
 import Box2 from './Components/Box2.js';
 import Box3 from './Components/Box3.js';
-
+ 
 const App = () => {
   const [tryOunce, setTryOunce] = useState(31.1035);
   const [newPrice, setNewPrice] = useState(0);
@@ -38,10 +38,8 @@ const App = () => {
           {
             const lastPrice = updatedPrice[updatedPrice.length - 1].price;
             const secondLast = updatedPrice[updatedPrice.length -2].price;
-            setPriceDiff(lastPrice - secondLast);
-            console.log(lastPrice);
-            console.log(secondLast);
-            console.log(priceDiff);
+            const diff = lastPrice - secondLast;
+            setPriceDiff(diff);
           }
 
           localStorage.setItem('price', JSON.stringify(updatedPrice));

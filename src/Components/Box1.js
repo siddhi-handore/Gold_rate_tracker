@@ -4,16 +4,16 @@ import { HiMiniArrowTrendingDown } from "react-icons/hi2";
 import { AiFillGolden } from "react-icons/ai";
 
 const Box1 = (props) => {
-  const [growth,setGrowth] = useState(props.priceDiff > 0);
+  const [growth,setGrowth] = useState(true);
   useEffect(()=>{
-    if(props.priceDiff > 0)
+    if(props.track > 0)
     {
       setGrowth(true);
     }
-    else{
+    else if(props.track < 0){
       setGrowth(false);
     }
-  },[props.priceDiff]);
+  },[props.track]);
   
   return (
     <div className="box1">
