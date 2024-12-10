@@ -19,7 +19,7 @@ const App = () => {
     const prevFetchTime = parseInt(localStorage.getItem('fetchTime') || 0);
     const currFetchtime = Date.now();
     const addNewPrice = ()=>{
-    fetch('https://api.metalpriceapi.com/v1/latest?api_key=a50e72e73f8b49053f2c077e825214a8&base=INR&currencies=XAU')
+    fetch('https://api.metalpriceapi.com/v1/latest?api_key=7f1cd20295c6fd501d3c40b05361c335&base=INR&currencies=XAU')
       .then(response => response.json())
       .then(data => {
         const temp = data.rates.INRXAU;
